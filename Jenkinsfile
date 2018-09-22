@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh """
 			
-				mvn clean deploy
+				mvn clean install
 				"""
                 echo 'Building. Done.'
             }
