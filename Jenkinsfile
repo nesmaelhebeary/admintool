@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                mvn clean deploy
+                sh """
+			
+				mvn clean deploy
+				"""
                 echo 'Building. Done.'
             }
         }
