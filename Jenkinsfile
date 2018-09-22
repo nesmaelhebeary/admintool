@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
                 mvn clean deploy
-                 echo 'Building. Done.'
+                echo 'Building. Done.'
             }
         }
         stage('Test') {
