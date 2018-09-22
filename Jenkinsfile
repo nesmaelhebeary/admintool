@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh """
 			
-				mvn clean install
+				mvn clean install  -Dmaven.test.skip=true
 				"""
                 echo 'Building. Done.'
             }
