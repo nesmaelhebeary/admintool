@@ -86,7 +86,7 @@
 
 
 
-
+<profiles>
 		<profile>
 			<id>develop</id>
 			<build>
