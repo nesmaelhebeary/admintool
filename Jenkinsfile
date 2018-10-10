@@ -17,23 +17,17 @@ pipeline {
             }
         }
 
- stage('Build Docker Image'){
+        stage('Build Docker Image'){
             sh 'docker build . -t admin-test'
-     }
+        }
 
-       stage('Push image to container registry'){
+        stage('Push image to container registry'){
             sh('docker login ${CONTAINER_REGISTRY_SERVER} -u ${CONTAINER_REGISTRY_USERNAME} -p ${CONTAINER_REGISTRY_PASSWORD}')
             sh('docker push admin-test')
-       
-    }
-stage('Kubernetes Setup'){
-        try{
+       }
+       stage('Kubernetes Setup'){
             sh("kubectl create -f app-deployment.yml -v=8")
-        } catch(e) {
-            notify("Something failed Kubernetes Setup")
-            throw e;
         }
-    }
     }
 }
 
