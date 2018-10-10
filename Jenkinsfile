@@ -19,6 +19,7 @@ pipeline {
 
         stage('Build Docker Image'){
    steps {
+cd ${WORKSPACE}/admintool/src/main/docker/
             sh 'docker build . -t admin-test'
 }
         }
