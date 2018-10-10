@@ -18,14 +18,10 @@ pipeline {
         }
 
  stage('Build Docker Image'){
-        try{
+     
             DOCKER_IMAGE_NAME="docker image name"
             sh 'docker build . -t ' + DOCKER_IMAGE_NAME
-        } catch(e) {
-            notify("Something failed building Docker Image")
-            throw e;
-        }
-    }
+     }
 
        stage('Push image to container registry'){
             sh('docker login ${CONTAINER_REGISTRY_SERVER} -u ${CONTAINER_REGISTRY_USERNAME} -p ${CONTAINER_REGISTRY_PASSWORD}')
