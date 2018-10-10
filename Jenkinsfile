@@ -21,7 +21,7 @@ pipeline {
    steps {
 sh """
 cd ${WORKSPACE}/admintool/src/main/docker/
-            sh 'docker build . -t admin-test'
+            sh 'docker build . -t'
 """
 }
         }
