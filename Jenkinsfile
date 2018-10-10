@@ -28,13 +28,9 @@ pipeline {
     }
 
        stage('Push image to container registry'){
-        try{
             sh('docker login ${CONTAINER_REGISTRY_SERVER} -u ${CONTAINER_REGISTRY_USERNAME} -p ${CONTAINER_REGISTRY_PASSWORD}')
             sh('docker push ' + DOCKER_IMAGE_NAME)
-        } catch(e) {
-            notify("Something failed pushing Docker Image")
-            throw e;
-        }
+       
     }
 stage('Kubernetes Setup'){
         try{
