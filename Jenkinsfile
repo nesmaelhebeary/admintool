@@ -18,14 +18,12 @@ pipeline {
         }
 
  stage('Build Docker Image'){
-     
-            DOCKER_IMAGE_NAME="docker image name"
-            sh 'docker build . -t ' + DOCKER_IMAGE_NAME
+            sh 'docker build . -t admin-test'
      }
 
        stage('Push image to container registry'){
             sh('docker login ${CONTAINER_REGISTRY_SERVER} -u ${CONTAINER_REGISTRY_USERNAME} -p ${CONTAINER_REGISTRY_PASSWORD}')
-            sh('docker push ' + DOCKER_IMAGE_NAME)
+            sh('docker push admin-test')
        
     }
 stage('Kubernetes Setup'){
