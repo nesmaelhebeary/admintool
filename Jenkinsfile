@@ -27,15 +27,10 @@ cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
 }
         }
 
-        stage('Push image to container registry'){
-   steps {
-            sh('docker login ${CONTAINER_REGISTRY_SERVER} -u ${CONTAINER_REGISTRY_USERNAME} -p ${CONTAINER_REGISTRY_PASSWORD}')
-            sh('docker push admin-test')
-}
-       }
+     
        stage('Kubernetes Setup'){
    steps {
-            sh("kubectl create -f app-deployment.yml -v=8")
+            sh("kubectl create -f deployment.yml")
 }
         }
     }
