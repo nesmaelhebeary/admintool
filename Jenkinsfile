@@ -21,6 +21,7 @@ pipeline {
    steps {
 sh """
 cd ${WORKSPACE}/admintool/src/main/docker/
+cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
             docker build -t admin .
 """
 }
