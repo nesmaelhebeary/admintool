@@ -33,7 +33,7 @@ cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
 
         container('kubectl') {
           // Change deployed image in canary to the one we just built
-          sh("kubectl create -f deployment.yml")
+          sh("kubectl get namespaces")
          } 
  
 }
