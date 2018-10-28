@@ -31,14 +31,14 @@ cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
        stage('Kubernetes Setup'){
    steps {
 
-			container('kubectl') {
+			
 				
 				sh " kubectl get namespaces"
 			
 		
       
  
-}
+
         }
     }
 }
