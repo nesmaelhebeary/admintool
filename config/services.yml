@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: admin-test
+    env: test
+  name: admin-test
+  namespace: test
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 33%
+      maxSurge: 100%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: admin-test
+        env: test
+    spec:
+      containers:
+      - name: admin-test
+        image: ECR_URL:admin-test-1
+        imagePullPolicy: Always            
+        ports:
+        - containerPort: 8182
+          name: http  
