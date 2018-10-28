@@ -2,12 +2,12 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: admin
+    app: admin-test
     env: test
-  name: admin
+  name: admin-test
   namespace: test
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     rollingUpdate:
       maxUnavailable: 33%
@@ -16,12 +16,12 @@ spec:
   template:
     metadata:
       labels:
-        app: admin
+        app: admin-test
         env: test
     spec:
       containers:
-      - name: admin
-        image: admin:latest
+      - name: admin-test
+        image: admin-test:latest
         imagePullPolicy: Always            
         ports:
         - containerPort: 8182

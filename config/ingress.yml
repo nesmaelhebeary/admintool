@@ -2,20 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   labels:
-    app: admin
+    app: admin-test
     env: test
-  name:  admin
+  name:  admin-test
   namespace: test
 spec:
   tls:
   - hosts:
-    -  admin
+    -  admin-test
   rules:
   - host: admin.com
     http:
       paths:
       - backend:
-          serviceName: admin
+          serviceName: admin-test
           servicePort: 8182
         path: /
 status:

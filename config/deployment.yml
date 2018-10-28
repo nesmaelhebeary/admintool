@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: admin
+    app: admin-test
     env: test
-  name: admin
+  name: admin-test
   namespace: test
 spec:
   selector:
-    app: admin
+    app: admin-test
     env: test
   ports:
   - name: http
