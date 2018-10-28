@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-		label "docker"
-		}
+    agent any
 
     stages {
         stage('Build') {
@@ -33,7 +31,7 @@ cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
        stage('Kubernetes Setup'){
    steps {
   agent {
-			label "kubectl"
+		
 				
 	     steps {
 			container('kubectl') {
