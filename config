@@ -1,0 +1,25 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://api-imesh-k8s-local-d8ok51-1983104873.us-east-1.elb.amazonaws.com
+  name: imesh.k8s.local
+contexts:
+- context:
+    cluster: imesh.k8s.local
+    user: imesh.k8s.local
+  name: imesh.k8s.local
+current-context: imesh.k8s.local
+kind: Config
+preferences: {}
+users:
+- name: imesh.k8s.local
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
+    password: H2AMI9BnM1fZNtBPfMG5x1Poj6bHvVQ6
+    username: admin
+- name: imesh.k8s.local-basic-auth
+  user:
+    password: H2AMI9BnM1fZNtBPfMG5x1Poj6bHvVQ6
+    username: admin
