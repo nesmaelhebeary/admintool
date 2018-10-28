@@ -30,9 +30,16 @@ cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
      
        stage('Kubernetes Setup'){
    steps {
-
-          // Change deployed image in canary to the one we just built
-          sh("kubectl get namespaces")
+  agent {
+			label "kubectl"
+				
+	     steps {
+			container('kubectl') {
+				
+				sh " kubectl get namespaces"
+			
+		}
+	       }
       
  
 }
@@ -40,3 +47,4 @@ cp ${WORKSPACE}/admintool/target/admintool-0.0.1-SNAPSHOT.war .
     }
 }
 
+}
