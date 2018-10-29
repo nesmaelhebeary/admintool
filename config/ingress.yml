@@ -9,9 +9,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    -  admin-test
+    -  admin-test.com
   rules:
-  - host: admin.com
+  - host: admin-test.com
     http:
       paths:
       - backend:

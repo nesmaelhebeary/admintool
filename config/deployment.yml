@@ -1,5 +1,6 @@
-apiVersion: v1
-kind: Service
+
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   labels:
     app: admin-test
@@ -7,10 +8,22 @@ metadata:
   name: admin-test
   namespace: test
 spec:
-  selector:
-    app: admin-test
-    env: test
-  ports:
-  - name: http
-    port: 8182
-    targetPort: 8182
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 33%
+      maxSurge: 100%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: admin-test
+        env: test
+    spec:
+      containers:
+      - name: admin-test
+        image: nesmaelhebeary/admin-test:latest
+        imagePullPolicy: Always            
+        ports:
+        - containerPort: 8182
+          name: http  
