@@ -1,0 +1,17 @@
+{
+  "name": "C",
+  "fields": [],
+  "relationships": [],
+  "changelogDate": "20201209003959",
+  "entityTableName": "c",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "admintool",
+  "applications": ["myApp", "myApp2"],
+  "microserviceName": "admintool"
+}

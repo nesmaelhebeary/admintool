@@ -1,0 +1,25 @@
+{
+  "myApp": {
+    "admintoolD": {
+      "home": {
+        "title": "DS",
+        "createLabel": "Create a new D",
+        "createOrEditLabel": "Create or edit a D",
+        "notFound": "No DS found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete D {{ id }}?"
+      },
+      "detail": {
+        "title": "D"
+      }
+    }
+  },
+  "admintoolApp": {
+    "admintoolD": {
+      "created": "A new D is created with identifier {{ param }}",
+      "updated": "A D is updated with identifier {{ param }}",
+      "deleted": "A D is deleted with identifier {{ param }}"
+    }
+  }
+}
